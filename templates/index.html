@@ -7,6 +7,7 @@
 <body>
   <section class="section">
     <div class="container">
+  <h1>Search for FODMAP foods</h1>
  <form method="POST" action="{{ url_for('submitted') }}">
       {{ form.csrf_token }}
       {{ form.search_key.label }}
