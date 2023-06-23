@@ -18,6 +18,3 @@ app.add_url_rule('/submitted', methods=all_methods, view_func=routes.submitted)
 # probs dont' need this anymore huh. oh well
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # no warning messages
 
-# start the app
-if __name__ == '__main__':
-    app.run(debug=True)
