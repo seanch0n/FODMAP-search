@@ -17,6 +17,8 @@ def submitted():
 
         # fuzzywuzzybuddy
         ret = search(search_key, search_term)
+        if not ret:
+            ret = []
         ret_dict = {"ret": ret, "key": search_key, "search_term":search_term}
 
 

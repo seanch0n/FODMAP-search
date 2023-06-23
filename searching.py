@@ -25,6 +25,7 @@ def search(search_key, search_term):
     else:
         scores += build_scores(search_key, search_term, data)
     # highest score first
+    if not scores:
+        return None
     scores.sort(reverse=True)
-    best_match = scores[0][1]
     return scores
