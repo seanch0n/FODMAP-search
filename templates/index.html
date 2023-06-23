@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- bulma is such trash :( -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <section class="section">
-    <div class="container">
-  <h1>Search for FODMAP foods</h1>
- <form method="POST" action="{{ url_for('submitted') }}">
+  <div class="container">
+    <h2>Search FODMAP Foods</h2>
+    <form class="form-group" method="POST" action="{{ url_for('submitted') }}">
       {{ form.csrf_token }}
       {{ form.search_key.label }}
       {{ form.search_key }}
       {{ form.search_term.label }}
       {{ form.search_term }}
-      <button type="submit" class="button is-primary">Search</button>
+      <button type="submit" class="btn btn-primary">Search</button>
     </form>
-    </div>
-  </section>
+ </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
