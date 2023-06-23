@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register for this Conference</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css">
+</head>
+<style>
+    .highlight-green {
+      background-color: #a3fba3;
+    }
+
+    .highlight-red {
+      background-color: #ff7f7f;
+    }
+  </style>
+<body>
+	<div class="container">
+    
+    <header>
+        <h1>Results:</h1>
+        You wanted to know if : "{{results['search_term']}}" was {{results['key']}} in FODMAP.<br>
+
+        We have found the following items are {{results['key']}} in FODMAP that may match your searched term.
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>Match Confidence</th>
+                <th>Food</th>
+                <th>FODMAP Category</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for r in results['ret'] %}
+            <!-- we wanted to do highlight-green/red but it's being weird and i don't have time to figure it out-->
+            <!-- it like won't show up on certain rows but for no reason, even with HTML inspector.-->
+                <tr>
+                    <td>{{r[0]}}</td>
+                    <td>{{r[1]}}</td>
+                    <td>{{r[2]}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+
+          <button onclick="goBack()">Go Back</button>
+
+          <script>
+          function goBack() {
+            window.history.back();
+          }
+          </script> 
+    
+    
+    
+    
+
+    </header>
+
+
+	</div>
+</body>
+</html>

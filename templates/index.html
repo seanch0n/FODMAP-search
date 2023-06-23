@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- bulma is such trash :( -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+ <form method="POST" action="{{ url_for('submitted') }}">
+      {{ form.csrf_token }}
+      {{ form.search_key.label }}
+      {{ form.search_key }}
+      {{ form.search_term.label }}
+      {{ form.search_term }}
+      <button type="submit" class="button is-primary">Search</button>
+    </form>
+    </div>
+  </section>
+</body>
+</html>
